@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayaç Okutmanın Erteleme İptali</title>
+    <link rel="stylesheet" href="css/Eertiptal.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cancel-form">
+		 <h1>Ertelemeyi İptal Et</h1>
+            <form>
+                <div class="input-container">
+                    <label for="tc">TC Kimlik Numarası:</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="tc" name="tc" maxlength="11" minlength="11" placeholder="Lütfen TC Kimlik Numaranızı Giriniz" required>
+                    </div>
+                </div>
+                <button type="submit" name="cancel-btn">Erteleme İptal Et</button>
+            </form>
+        </div>
+    </div>
+	
+	<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const cancelButton = document.querySelector('button[name="cancel-btn"]');
+
+    cancelButton.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const tc = document.getElementById('tc').value;
+
+        if (tc === '') {
+            alert('Lütfen TC Kimlik Numaranızı girin.');
+            return;
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost/Eertiptal.php", true); 
+		
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                var responseData = this.responseText;
+                alert(responseData);
+            }
+        };
+        xhr.send("tc=" + tc); 
+    });
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Su Sayaç Okumayı Ertele</title>
+<link rel="stylesheet" href="css/Serteleme.css">
+</head>
+<body>
+<div class="container">
+    <h1>Su Sayacı Okumayı Erteleme</h1>
+    <div class="postpone-form">
+        <div class="date-container">
+            <label for="date">Erteleme Tarihi:</label>
+            <input type="date" id="date" name="date">
+        </div>
+        <div class="reason-container">
+    <label for="reason">Erteleme Nedeni:</label>
+    <select id="reason" name="reason">
+        <option value="" selected disabled>Erteleme nedenini seçiniz</option>
+        <option value="Tatil">Tatil</option>
+        <option value="İş Seyahati">İş Seyahati</option>
+        <option value="Hastalık">Hastalık</option>
+        <option value="other">Diğer</option>
+    </select>
+</div>
+        <div id="other-reason-container" class="other-reason-container hidden">
+            <label for="other-reason">Diğer Neden:</label>
+            <input type="text" id="other-reason" name="other-reason">
+        </div>
+        <button id="postpone-btn">Okumayı Ertele</button>
+    </div>
+</div>
+
+<script>
+const postponeButton = document.getElementById('postpone-btn');
+const postponeForm = document.querySelector('.postpone-form');
+const reasonSelect = document.getElementById('reason');
+const otherReasonContainer = document.getElementById('other-reason-container'); 
+
+postponeButton.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const dateInput = document.getElementById('date').value;
+    let reasonInput = reasonSelect.value;
+    const otherReasonInput = document.getElementById('other-reason').value;
+
+    if (dateInput === '') {
+        alert('Lütfen ertelemek istediğiniz tarihi seçin.');
+        return;
+    }
+
+    if (reasonInput === 'other' && otherReasonInput === '') {
+        alert('Lütfen ertelemenin nedenini belirtin.');
+        return;
+    }
+
+    if (reasonInput === 'other' && otherReasonInput !== '') {
+        reasonInput = otherReasonInput;
+    }
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'http://localhost/Serteleme.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            alert(xhr.responseText);
+            postponeForm.reset();
+            otherReasonContainer.style.display = 'none';
+        }
+    };
+    xhr.send('ertelemeTarihi=' + encodeURIComponent(dateInput) + '&ertelemeNedeni=' + encodeURIComponent(reasonInput) + '&other-reason=' + encodeURIComponent(otherReasonInput));
+});
+
+reasonSelect.addEventListener('change', function() {
+    if (this.value === 'other') {
+        otherReasonContainer.style.display = 'block'; 
+    } else {
+        otherReasonContainer.style.display = 'none'; 
+    }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Faturam ve Sayacım</title>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+ <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+<nav>
+  <ul>
+    <li>
+      <a href="hakkımızda.html">HAKKIMIZDA</a>
+    </li>
+    <li>
+      <a href="misyonumuz.html">MİSYONUMUZ</a>
+    </li>
+    <li>
+      <a href="vizyonumuz.html">VİZYONUMUZ</a>
+    </li>
+    <li class="dropdown">
+      <a href="#">İLETİŞİM</a>
+      <ul class="dropdown-content">
+        <li><a href="Biletişim.html">Bizimle İletişim</a></li>
+        <li><a href="Şiletişim.html">Şirketlerle İletişim</a></li>
+      </ul>
+    </li>
+	<li>
+      <a href="kayıtOl.html">KAYIT OL</a>
+    </li>
+	<li>
+      <a href="giriş.html">GİRİŞ</a>
+    </li>
+  </ul>
+</nav>
+
+ <div class="container">
+ <div class="slider">
+    <div class="box box1">
+         <img src="jpg/resim4.jpg" alt="Haber 1" onclick="openModal(1)">
+    </div>
+    <div class="box box2">
+        <img src="jpg/resim6.jpg" alt="Haber 2" onclick="openModal(2)">
+    </div>
+    <div class="box box3">
+        <img src="jpg/resim1.jpg" alt="Haber 3" onclick="openModal(3)">
+    </div>
+    <div class="box box4">
+        <img src="jpg/resim7.jpg" alt="Haber 4" onclick="openModal(4)">
+    </div>
+    <div class="box box5">
+        <img src="jpg/resim2.jpg" alt="Haber 5" onclick="openModal(5)">
+    </div>
+    <div class="box box6">
+        <img src="jpg/resim3.jpg" alt="Haber 6" onclick="openModal(6)">
+    </div>
+    <div class="box box7">
+        <img src="jpg/resim5.jpg" alt="Haber 7" onclick="openModal(7)">
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modalHaberDetaylari" class="haber-detay"></div>
+        <p class="yukleme-bilgileri">Yükleme Tarihi ve Saati: <span id="yuklemeTarihiVeSaati"></span></p>
+    </div>
+</div>
+
+
+</div>
+   <script src="js/script.js"></script>
+   
+<div id="test"></div>
+	 <div class="sirket">
+		      <section class="panel" style="background-image:url(jpg/panel1.jpg)">
+    <div>
+        <h2>Elektrik</h2>
+        <p>Elektrik, enerji ihtiyaçlarımızın karşılanmasında kullanılan temel bir kaynaktır. 
+		Aydınlatma, elektronik cihazların çalıştırılması ve endüstriyel süreçlerde elektrik büyük bir rol oynar.</p>
+        <a href="elektrik.html">Devamını Oku</a>
+    </div>
+</section>
+             <section class="panel" style="background-image:url(jpg/panel2.jpg)">
+    <div>
+        <h2>Su</h2>
+        <p>Su, yaşamın devamı için temel bir gereksinimdir. İçme suyu olarak kullanıldığı gibi tarım, 
+		endüstri ve enerji üretiminde de hayati bir rol oynar.</p>
+        <a href="su.html">Devamını Oku</a>
+    </div>
+</section>
+             <section class="panel" style="background-image:url(jpg/panel3.jpg)">
+    <div>
+        <h2>Doğalgaz</h2>
+        <p>Doğalgaz, ısınma, sıcak su sağlama, endüstriyel süreçler ve enerji üretiminde yaygın olarak kullanılan bir enerji kaynağıdır.</p>
+        <a href="doğalgaz.html">Devamını Oku</a>
+    </div>
+</section>
+</div>
+
+ <div class="video-gallery">
+        <div class="video-item">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0"
+                allowfullscreen></iframe>
+            <div class="video-title">Video 1 Başlık</div>
+        </div>
+        <div class="video-item">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0"
+                allowfullscreen></iframe>
+            <div class="video-title">Video 2 Başlık</div>
+        </div>
+        <div class="video-item">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0"
+                allowfullscreen></iframe>
+            <div class="video-title">Video 3 Başlık</div>
+        </div>
+        <div class="video-item">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0"
+                allowfullscreen></iframe>
+            <div class="video-title">Video 4 Başlık</div>
+        </div>
+        <div class="video-item">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0"
+                allowfullscreen></iframe>
+            <div class="video-title">Video 5 Başlık</div>
+        </div>
+        <div class="video-item">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0"
+                allowfullscreen></iframe>
+            <div class="video-title">Video 6 Başlık</div>
+        </div>
+        <div class="video-item">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/VIDEO_ID_7" frameborder="0"
+                allowfullscreen></iframe>
+            <div class="video-title">Video 7 Başlık</div>
+        </div>
+    </div>
+	
+	<div class="social-media-container">
+        <div class="social-icon-container"><a href="https://www.facebook.com/" target="_blank"
+                class="social-icon"><img src="png/facebook.png" alt="Facebook"></a></div>
+        <div class="social-icon-container"><a href="https://www.twitter.com/" target="_blank"
+                class="social-icon"><img src="png/twitter.png" alt="Twitter"></a></div>
+        <div class="social-icon-container"><a href="https://www.instagram.com/" target="_blank"
+                class="social-icon"><img src="png/instagram.png" alt="Instagram"></a></div>
+        <div class="social-icon-container"><a href="https://www.youtube.com/" target="_blank"
+                class="social-icon"><img src="png/youtube.png" alt="YouTube"></a></div>
+    </div>
+
+
+</body>
+</html>

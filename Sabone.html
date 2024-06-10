@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Su Abonelik İşlemleri</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="css/içsu.css">
+</head>
+<body>
+<div class="container">
+  <div class="box">
+    <a href="http://localhost/sAbonelik.php" class="link">
+      <div class="icon">Icon 1</div>
+      <div class="text">Abonelik Formu</div>
+    </a>
+  </div>
+  <div class="box">
+    <a href="sAbonelik_iptali.html" class="link">
+      <div class="icon">Icon 2</div>
+      <div class="text">Aboneliğimin İptali</div>
+    </a>
+  </div>
+  <div class="box">
+    <a href="Saboneliğim.html" class="link">
+      <div class="icon">Icon 3</div>
+      <div class="text">Aboneliğim</div>
+    </a>
+  </div>
+  <div class="box">
+    <a href="Sönemli.html" class="link">
+      <div class="icon">Icon 4</div>
+      <div class="text">Önemli Hususlar</div>
+    </a>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const boxes = document.querySelectorAll(".box");
+
+  boxes.forEach(box => {
+    const textElement = box.querySelector(".text");
+    const text = textElement.textContent.trim().toLowerCase(); 
+    const icon = box.querySelector(".icon");
+
+    console.log("Metin:", text); 
+
+    if (text === "abonelik formu") {
+      icon.innerHTML = '<i class="fas fa-address-book"></i>';
+    } else if (text === "aboneliğimin iptali") {
+      icon.innerHTML = '<i class="fas fa-times-circle"></i>';
+    } else if (text === "aboneliğim") {
+      icon.innerHTML = '<i class="fas fa-user"></i>';
+    } else if (text === "önemli hususlar") {
+      icon.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+    } else {
+     
+      icon.innerHTML = '<i class="fas fa-ban"></i>';
+    }
+  });
+});
+
+</script>
+
+</body>
+</html>

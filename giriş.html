@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Sayfası</title>
+    <link rel="stylesheet" type="text/css" href="css/giriş.css">
+</head>
+<body>
+    <div class="container">
+        <h2>GİRİŞ YAP</h2>
+        <form action="http://localhost/kontrol.php" method="POST" onsubmit="return validateForm()">
+            <div>
+                <label for="username">Kullanıcı Adı:</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div>
+                <label for="password">Parola:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password">
+                    <span class="password-toggle" onclick="togglePasswordVisibility()">👁️</span>
+                </div>
+            </div>
+            <div id="security_code_container">
+                <label for="security_code">Güvenlik Kodu:</label>
+                <span id="security_code_text"></span>
+                <span class="refresh-security-code" onclick="refreshSecurityCode()">↻</span>
+                <input type="text" id="security_code" name="security_code">
+            </div>
+			<input type="hidden" id="hidden_security_code" name="hidden_security_code">
+
+            <button type="submit">Giriş Yap</button>
+        </form>
+		
+        <div class="forgot-password-container">
+            <form action="şifre.html" method="GET">
+                <button type="submit">Şifremi Unuttum</button>
+            </form>
+        </div>
+		
+        <div class="update-password-container">
+            <form action="güncelle.html" method="GET">
+                <button type="submit">Bilgilerimi Güncelle</button>
+            </form>
+        </div>
+    </div>
+	
+	<script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+
+        function refreshSecurityCode() {
+            getSecurityCode();
+        }
+
+        function getSecurityCode() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    if (xhr.status == 200) {
+                        var securityCode = xhr.responseText;
+                        document.getElementById("security_code_text").innerText = securityCode;
+						 document.getElementById("hidden_security_code").value = securityCode;
+                    } else {
+                        console.error('Güvenlik kodunu alma hatası:', xhr.status);
+                    }
+                }
+            };
+            xhr.open("GET", "http://localhost/güvenlik.php", true);
+            xhr.send();
+        }
+
+        function validateForm() {
+            var securityCodeInput = document.getElementById("security_code");
+            if (securityCodeInput.value.trim() === "") {
+                alert("Lütfen güvenlik kodunu giriniz.");
+                return false; 
+            }
+            return true;
+        }
+
+        window.onload = function() {
+            getSecurityCode();
+        };
+    </script>
+
+    <video class="background-video" autoplay muted loop poster="video_poster.jpg">
+        <source src="proje.mp4" type="video/mp4">
+    </video>
+
+</body>
+</html>

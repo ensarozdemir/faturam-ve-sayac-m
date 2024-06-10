@@ -1,0 +1,113 @@
+-- Veritabanı: `proje`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `kayıtol`
+--
+
+CREATE TABLE `kayıtol` (
+  `idkayıtOl` int(50) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `tc` varchar(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+
+
+--
+-- Tablo için tablo yapısı `elektrik_abonelik`
+--
+
+CREATE TABLE `elektrik_abonelik` (
+  `id` int(11) NOT NULL,
+  `ad_soyad` varchar(50) NOT NULL,
+  `tc` char(11) NOT NULL,
+  `telefon` varchar(15) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mulk` enum('kira','ev_sahibi') NOT NULL,
+  `adres` varchar(255) NOT NULL,
+  `onay` tinyint(1) NOT NULL,
+  `resim_yol` varchar(255) NOT NULL,
+  `resim_on_yol` varchar(255) NOT NULL,
+  `resim_arka_yol` varchar(255) NOT NULL,
+  `tarih` timestamp NOT NULL DEFAULT current_timestamp(),
+  `abonelik_numarasi` varchar(20) NOT NULL,
+  `abonelik_durumu` varchar(11) NOT NULL,
+  `okumaGünü` varchar(255) DEFAULT NULL,
+  `ertelemeTarihi` varchar(255) DEFAULT NULL,
+  `ertelemeNedeni` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+
+
+--
+-- Tablo için tablo yapısı `su_abonelik`
+--
+
+CREATE TABLE `su_abonelik` (
+  `id` int(11) NOT NULL,
+  `ad_soyad` varchar(50) NOT NULL,
+  `tc` char(11) NOT NULL,
+  `telefon` varchar(15) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mulk` enum('kira','ev_sahibi') NOT NULL,
+  `adres` varchar(255) NOT NULL,
+  `onay` tinyint(1) NOT NULL,
+  `resim_yol` varchar(255) NOT NULL,
+  `resim_on_yol` varchar(255) NOT NULL,
+  `resim_arka_yol` varchar(255) NOT NULL,
+  `tarih` timestamp NOT NULL DEFAULT current_timestamp(),
+  `abonelik_numarasi` varchar(10) NOT NULL,
+  `abonelik_durumu` varchar(11) NOT NULL,
+  `okumaGünü` varchar(255) DEFAULT NULL,
+  `ertelemeTarihi` varchar(255) DEFAULT NULL,
+  `ertelemeNedeni` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+
+
+
+--
+-- Tablo için tablo yapısı `doğalgaz_abonelik`
+--
+
+CREATE TABLE `doğalgaz_abonelik` (
+  `id` int(11) NOT NULL,
+  `ad_soyad` varchar(50) NOT NULL,
+  `tc` char(11) NOT NULL,
+  `telefon` varchar(15) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mulk` enum('kira','ev_sahibi') NOT NULL,
+  `adres` varchar(255) NOT NULL,
+  `onay` tinyint(1) NOT NULL,
+  `resim_yol` varchar(255) NOT NULL,
+  `resim_on_yol` varchar(255) NOT NULL,
+  `resim_arka_yol` varchar(255) NOT NULL,
+  `tarih` timestamp NOT NULL DEFAULT current_timestamp(),
+  `abonelik_numarasi` varchar(10) NOT NULL,
+  `abonelik_durumu` varchar(11) NOT NULL,
+  `okumaGünü` varchar(255) DEFAULT NULL,
+  `ertelemeTarihi` varchar(255) DEFAULT NULL,
+  `ertelemeNedeni` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+
+
+
+--
+-- Tablo için tablo yapısı `bill_table`
+--
+
+CREATE TABLE `bill_table` (
+  `id` int(11) NOT NULL,
+  `result` varchar(255) NOT NULL,
+  `tc` varchar(11) NOT NULL,
+  `bill_type` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;

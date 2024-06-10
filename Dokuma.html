@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doğalgaz Sayaç Okuma Günü Seçme</title>
+<link rel="stylesheet" href="css/Dokuma.css">
+</head>
+<body>
+
+<div class="container">
+  <h1  class="title">Sayaç Okuma Gününü Seç!</h1>
+  <div id="days-container" class="days-container"></div>
+</div>
+
+<script>
+const daysContainer = document.getElementById('days-container');
+
+const days = [];
+for (let i = 1; i <= 31; i++) {
+  days.push(i);
+}
+
+days.forEach(day => {
+  const dayElement = document.createElement('div');
+  dayElement.classList.add('day');
+  dayElement.textContent = day;
+  dayElement.addEventListener('click', () => {
+    console.log('Selected day:', day);
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://localhost/Dokuma.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+        var responseData = this.responseText;
+        alert(responseData);
+      }
+    };
+    xhr.send("okumaGünü=" + day);
+  });
+  daysContainer.appendChild(dayElement);
+});
+</script>
+
+
+</body>
+</html>

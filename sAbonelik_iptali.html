@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Su Abonelik İptali</title>
+<link rel="stylesheet" href="css/siptal.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Aboneliğimin İptali</h1>
+    <form id="abonelikForm">
+        <div class="form-group">
+            <label for="ad_soyad">Ad Soyad:</label>
+            <input type="text" id="ad_soyad" name="ad_soyad" required>
+        </div>
+        <div class="form-group">
+            <label for="tc">TC Kimlik Numaranız:</label>
+            <input type="text" id="tc" name="tc" required>
+        </div>
+		<div class="form-group">
+            <label for="telefon">Telefon:</label>
+            <input type="tel" id="telefon" name="telefon" required>
+        </div>
+        <div class="form-group">
+            <label for="email">E-Posta:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <button type="button" onclick="aboneligiIptalEt()">Aboneliğimi İptal Et</button>
+    </form>
+    <div class="message-container">
+        <div id="message-panel" class="message-panel"></div>
+    </div>
+</div>
+
+<script>
+    function aboneligiIptalEt() {
+        var ad_soyad = document.getElementById("ad_soyad").value;
+        var tc = document.getElementById("tc").value;
+        var email = document.getElementById("email").value;
+        var telefon = document.getElementById("telefon").value;
+
+
+        if (ad_soyad === '' || tc === '' || email === '' || telefon === '') {
+            alert("Tüm alanları doldurun.");
+            return;
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost/Siptal.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+              
+                var response = JSON.parse(xhr.responseText);
+                var messagePanel = document.getElementById("message-panel");
+                messagePanel.textContent = response.message;
+                messagePanel.className = response.success ? "message-panel success" : "message-panel error";
+            }
+        };
+
+        var data = "ad_soyad=" + ad_soyad + "&tc=" + tc + "&email=" + email + "&telefon=" + telefon;
+        xhr.send(data);
+    }
+</script>
+
+</body>
+</html>

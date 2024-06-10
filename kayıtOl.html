@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <link rel="stylesheet" href="css/kayıtOl.css">
+</head>
+<body>
+    <div class="container">
+        <h2>KAYIT OL</h2>
+        <form action="http://localhost/kayıtOl.php" method="POST" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="fullname">Ad Soyad:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+			<div class="form-group">
+                <label for="tc">TC Kimlik Numarası:</label>
+                <input type="text" id="tc" name="tc" minlength="11" maxlength="11" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-posta:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefon Numarası:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Kullanıcı Adı:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+    <label for="password">Parola:</label>
+    <div class="password-container">
+        <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-zA-Z])(?=.*\W).{8,}" title="Parolanız en az 8 karakterden oluşmalı, bir harf, bir sayı ve bir özel karakter içermelidir." required>
+        <span class="password-toggle" onclick="togglePasswordVisibility('password')">👁️</span>
+    </div>
+</div>
+<div class="form-group">
+    <label for="confirm_password">Parolayı Onayla:</label>
+    <div class="password-container">
+        <input type="password" id="confirm_password" name="confirm_password" required>
+        <span class="password-toggle" onclick="togglePasswordVisibility('confirm_password')">👁️</span>
+    </div>
+</div>
+            <button type="submit">Kayıt Ol</button>
+        </form>
+    </div>
+	
+	<script>
+        function togglePasswordVisibility(id) {
+            var passwordInput = document.getElementById(id);
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+
+        function validateForm() {
+            var passwordInput = document.getElementById("password");
+            var confirmPasswordInput = document.getElementById("confirm_password");
+
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                alert("Parolalar eşleşmiyor.");
+                return false;
+            }
+
+            if (passwordInput.value.length < 8 || !/(?=.*\d)(?=.*[a-zA-Z])(?=.*\W)/.test(passwordInput.value)) {
+                alert("Parola en az 8 karakterden oluşmalı, bir harf, bir sayı ve bir özel karakter içermelidir.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+<video class="background-video" autoplay muted loop poster="video_poster.jpg">
+    <source src="proje.mp4" type="video/mp4">
+  
+</video>
+
+</body>
+</html>

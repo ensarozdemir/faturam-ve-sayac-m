@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Su Sayaç İşlemleri</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="css/içsu.css">
+</head>
+<body>
+<div class="container">
+  <div class="box">
+    <a href="Ssayaç.html" class="link">
+      <div class="icon">Icon 1</div>
+      <div class="text">Sayaç Okutma</div>
+    </a>
+  </div>
+  <div class="box">
+    <a href="Sokuma.html" class="link">
+      <div class="icon">Icon 2</div>
+      <div class="text">Okuma Günü Belirleme</div>
+    </a>
+  </div>
+  <div class="box">
+    <a href="Serteleme.html" class="link">
+      <div class="icon">Icon 3</div>
+      <div class="text">Sayaç Okutmayı Erteleme</div>
+    </a>
+  </div>
+  <div class="box">
+    <a href="Sertiptal.html" class="link">
+      <div class="icon">Icon 4</div>
+      <div class="text">Ertelemeyi iptal Et</div>
+    </a>
+  </div>
+  <div class="box">
+    <a href="Sönemli1.html" class="link">
+      <div class="icon">Icon 5</div>
+      <div class="text">Önemli Hususlar</div>
+    </a>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const boxes = document.querySelectorAll(".box");
+
+ boxes.forEach(box => {
+  const textElement = box.querySelector(".text");
+  const text = textElement.textContent.trim().toLowerCase(); 
+  const icon = box.querySelector(".icon");
+
+  console.log("Metin:", text); 
+
+  if (text === "sayaç okutma") {
+    icon.innerHTML = '<i class="fas fa-camera"></i>';
+  } else if (text === "okuma günü belirleme") {
+    icon.innerHTML = '<i class="fas fa-calendar-alt"></i>';
+  } else if (text === "sayaç okutmayı erteleme") {
+    icon.innerHTML = '<i class="fas fa-clock"></i>';
+  } else if (text === "ertelemeyi iptal et") {
+    icon.innerHTML = '<i class="fas fa-times"></i>';
+  } else if (text === "önemli hususlar") {
+    icon.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+  } else {
+    console.log("Eşleşme bulunamadı:", text);
+  }
+});
+
+});
+
+</script>
+
+</body>
+</html>

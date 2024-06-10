@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doğalgaz Fatura İşlemleri</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="css/içdoğalgaz.css">
+</head>
+<body>
+<div class="container">
+  <div class="box">
+    <a href="abonelik_formu.html" class="link">
+      <div class="icon">Icon 1</div>
+      <div class="text">Faturalarım</div>
+    </a>
+  </div>
+  <div class="box">
+    <a href="abonelik_iptali.html" class="link">
+      <div class="icon">Icon 2</div>
+      <div class="text">Ödeme</div>
+    </a>
+  </div>
+  <div class="box">
+    <a href="onemli_hususlar.html" class="link">
+      <div class="icon">Icon 3</div>
+      <div class="text">Önemli Hususlar</div>
+    </a>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const boxes = document.querySelectorAll(".box");
+
+  boxes.forEach(box => {
+    const textElement = box.querySelector(".text");
+    const text = textElement.textContent.trim().toLowerCase(); 
+    const icon = box.querySelector(".icon");
+
+    console.log("Metin:", text); 
+
+    if (text === "faturalarım") {
+      icon.innerHTML = '<i class="fas fa-address-book"></i>';
+    } else if (text === "ödeme") {
+      icon.innerHTML = '<i class="fas fa-money-bill-wave"></i>';
+    }  else if (text === "önemli hususlar") {
+      icon.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+    } 
+  });
+});
+
+</script>
+
+</body>
+</html>

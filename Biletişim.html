@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Biletişim.css">
+    <title>İletişim - Elektrik, Su ve Doğalgaz Şirketi</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1 class="italic-title">BİZİMLE İLETİŞİM</h1>
+            <p>
+                Bize ulaşmak için aşağıdaki iletişim formunu kullanabilirsiniz. Size en kısa sürede geri dönüş yapacağız.
+            </p>
+
+            <form action="#" method="POST">
+                <label for="name">Adınız:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="surname">Soyadınız:</label>
+                <input type="text" id="surname" name="surname" required>
+
+                <label for="email">E-posta Adresiniz:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Telefon Numaranız:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" required>
+
+                <label for="message">Mesajınız:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
+    </div>
+	
+	<video class="background-video" autoplay muted loop poster="video_poster.jpg">
+    <source src="proje.mp4" type="video/mp4">
+  
+</video>
+
+</body>
+</html>
+

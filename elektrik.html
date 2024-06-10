@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/elektrik.css">
+    <title>Elektrik</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/elektrik.js" defer></script>
+</head>
+<body>
+
+<section id="production-methods">
+        <h2>Elektrik Tüketimi</h2>
+        <p>
+            Elektrik Tüketimi Hakkında Kısa Bilgiler
+        </p>
+        <ul>
+            <li><strong>Temel Nedenler:</strong> Elektrik, modern yaşamın vazgeçilmez bir parçasıdır.
+                                                 Evlerde, iş yerlerinde, endüstriyel tesislerde yaygın olarak kullanılır.</li>
+            <li><strong>Günlük Kullanım Alanları:</strong> Aydınlatma, ısınma, soğutma, iletişim, eğlence ve üretim gibi birçok alanda elektrik kullanılır.</li>
+            <li><strong>Enerji Verimliliği:</strong> Tasarruflu aydınlatma ve enerji sınıflandırması yüksek cihazlar kullanarak 
+			                                         evlerde enerji verimliliği sağlanabilir.</li>
+            <li><strong>Bireysel Sorumluluklar:</strong> Bireyler olarak enerji tüketimimizi kontrol altında tutarak çevresel etkileri azaltabiliriz.</li>
+            <li><strong>Sürdürülebilir Gelecek:</strong> Enerji verimliliği ve sürdürülebilir enerji kaynaklarına yönelik çabalar,
+                                            			daha sürdürülebilir bir geleceğe katkı sağlar.
+</li>
+        </ul>
+    </section>
+	
+<section id="energy-chart">
+        <h2>Son 5 Yılın Elektrik Tüketimi Grafiği</h2>
+        <canvas id="consumptionChart1" width="800" height="400"></canvas>
+ 
+	
+        <h2>2023 Elektrik Tüketimi Grafiği</h2>
+        <canvas id="consumptionChart2" width="800" height="400"></canvas>
+    </section>
+	
+	<section id="production-methods">
+	
+        <h2>Üretim Yöntemleri</h2>
+        <p>
+            Elektrik, çeşitli yöntemlerle üretilir. Fosil yakıtlar, nükleer enerji, rüzgar enerjisi ve güneş enerjisi gibi
+            yöntemlerle elektrik üretimi yapılmaktadır.
+        </p>
+        <ul>
+            <li><strong>Fosil Yakıtlar:</strong> Kömür, petrol ve doğalgaz gibi fosil yakıtların yanmasıyla elektrik üretilir.</li>
+            <li><strong>Nükleer Enerji:</strong> Nükleer reaksiyonlar sonucu elde edilen enerji ile elektrik üretilir.</li>
+            <li><strong>Rüzgar Enerjisi:</strong> Rüzgar türbinleri aracılığıyla rüzgar enerjisi elektriğe dönüştürülür.</li>
+            <li><strong>Güneş Enerjisi:</strong> Güneş panelleri sayesinde güneş ışığından elektrik üretilir.</li>
+        </ul>
+    </section>
+	
+	<section id="energy-chart">
+	<h2>Üretim Yöntemleri Çubuk Grafiği</h2>
+        <canvas id="barChart" width="800" height="400"></canvas>
+	</section>
+	
+    <section id="distribution-network">
+        <h2>Dağıtım Ağı</h2>
+        <p>
+            Elektrik, dağıtım ağı üzerinden tüketiciye ulaşır. Bu ağ, trafo istasyonları, iletim hatları ve
+            dağıtım hatları gibi unsurları içerir.
+        </p>
+        <ul>
+            <li><strong>Trafo İstasyonları:</strong> Elektriğin gerilim seviyesini değiştiren istasyonlardır.</li>
+            <li><strong>İletim Hatları:</strong> Yüksek gerilimli hatlardır ve elektriği uzak bölgelere taşırlar.</li>
+            <li><strong>Dağıtım Hatları:</strong> Daha düşük gerilimle çalışan hatlardır ve elektriği tüketicilere dağıtırlar.</li>
+        </ul>
+    </section>
+	
+	 <section id="energy-chart">
+	<h2>Dağıtım Ağı Pasta Grafiği</h2>
+        <canvas id="doughnutChart" width="800" height="400"></canvas>
+    </section>
+	
+	<section id="energy-saving-tips">
+    <h2>Tasarruf İpuçları</h2>
+
+    <div class="savings-item">
+        <div class="image-container">
+            <img src="jpg/elektrik1.jpg" alt="Tasarruf İpuçları 1">
+        </div>
+        <div class="text-container">
+            <h3>Enerji Verimli Cihazlar Kullanın</h3>
+            <p>
+                Enerji verimli cihazlar, aynı performansı sunarken daha az elektrik tüketir. Bu cihazları tercih ederek enerji maliyetlerinizi azaltabilirsiniz.
+            </p>
+        </div>
+    </div>
+
+    <div class="savings-item">
+        <div class="image-container">
+            <img src="jpg/elektrik2.jpg" alt="Tasarruf İpuçları 2">
+        </div>
+        <div class="text-container">
+            <h3>Lambaları LED Ampullerle Değiştirin</h3>
+            <p>
+                Geleneksel ampuller yerine LED ampuller kullanmak, daha az enerji tüketir ve daha uzun ömürlüdür. Bu sayede tasarruf sağlayabilirsiniz.
+				Ayrıca, düşük ısınma özelliğiyle ortamın serin kalmasına katkıda bulunur. LED ampuller kullanarak sadece enerji maliyetlerinden değil, 
+				aynı zamanda çevresel etkilerden de tasarruf sağlamış olursunuz.
+            </p>
+        </div>
+    </div>
+
+    <div class="savings-item">
+        <div class="image-container">
+            <img src="jpg/elektrik3.jpg" alt="Tasarruf İpuçları 3">
+        </div>
+        <div class="text-container">
+            <h3>Standby Modunu Kapatın</h3>
+            <p>
+                Cihazlarınızı kullanmadığınızda, standby modunu kapatın. Standby modu da enerji tüketir, bu nedenle kapatmak tasarruf sağlar.
+            </p>
+        </div>
+    </div>
+
+    <div class="savings-item">
+        <div class="image-container">
+            <img src="jpg/elektrik4.jpg" alt="Tasarruf İpuçları 4">
+        </div>
+        <div class="text-container">
+            <h3>Kullanılmayan Prizleri Kapatın</h3>
+            <p>
+                Kullanılmayan prizler bile enerji tüketebilir. Prizleri kullanmadığınızda fişi çekerek enerji tasarrufu yapabilirsiniz.
+				Bu küçük ama etkili adım, hem enerji faturalarını düşürecektir hem de çevreye daha duyarlı bir yaşam tarzını destekleyecektir.
+            </p>
+        </div>
+    </div>
+
+    <div class="savings-item">
+        <div class="image-container">
+            <img src="jpg/elektrik5.jpg" alt="Tasarruf İpuçları 5">
+        </div>
+        <div class="text-container">
+            <h3>Evde Gereksiz Işıkları Kapatın</h3>
+            <p>
+                Evde gereksiz ışıkları kapatmak, enerji tüketimini azaltır. Odada olmadığınızda lambaları ve elektronikleri kapatmayı unutmayın.
+            </p>
+        </div>
+    </div>
+
+</section> 
+
+</body>
+</html>
+
