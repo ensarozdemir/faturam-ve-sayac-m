@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şifremi Unuttum</title>
+    <link rel="stylesheet" type="text/css" href="css/şifre.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Şifremi Unuttum</h2>
+        <form action="http://localhost/şifre.php" method="POST">
+            <div>
+                <label for="ad_soyad">Ad Soyad:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div>
+                <label for="telefon">Telefon:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div>
+                <label for="email">E-posta:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Şifremi Sıfırla</button>
+        </form>
+		<div id="message-panel" class="message-panel"></div>
+    </div>
+	<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var form = document.querySelector("form");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost/şifre.php", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var messagePanel = document.getElementById("message-panel");
+                    messagePanel.textContent = response.message;
+                    if (response.success) {
+                        messagePanel.style.color = "green";
+                    } else {
+                        messagePanel.style.color = "red";
+                    }
+                }
+            };
+            xhr.send(formData);
+        });
+    });
+</script>
+
+<video class="background-video" autoplay muted loop poster="video_poster.jpg">
+    <source src="proje.mp4" type="video/mp4">
+  
+</video>
+
+</body>
+</html>

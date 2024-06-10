@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-image: url('../elektrik.gif'); 
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.5); 
+}
+
+.postpone-form {
+    margin-bottom: 20px;
+}
+
+.date-container, .reason-container, .other-reason-container {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+}
+
+input[type="date"], select, input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-image: linear-gradient(to right top, #d6a4e1 0%, #aad4f8 100%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
